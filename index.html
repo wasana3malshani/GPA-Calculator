@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GPACalculator</title>
+	<link rel="stylesheet" type="text/css" href="css.css">
+</head>
+<body>
+	<div class="heading">
+		<h1 >GPA Calculator</h1>
+		<h3 >Department of Physical Science</h3>
+		<h4 >Vavuniya Campus of the University of Jaffna</h4>
+	</div>
+	<div>
+		<center>
+			<h4 class="printheading">
+			Acedemic Year: 
+			<select class="combocolor" id="accyear">
+				<option value="2014/2015">2014/2015</option>
+				<option value="2015/2016">2015/2016</option>
+				<option value="2016/2017">2016/2017</option>
+				<option value="2017/2018">2014/2015</option>
+			</select>
+			Level:
+			<select class="combocolor" id="level">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+			</select>
+			Semester:
+			<select class="combocolor" id="semester">
+				<option value="1">1</option>
+				<option value="2">2</option>
+			</select>
+			No of Subjects:
+			<select class="combocolor" id="noofsub">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+			</select>
+			<button class="combocolor" onclick="addbutton()">Add</button>
+		</h4>
+		</center>
+	</div>
+	<hr>
+	<div>
+		<h2 class="combocolor" id="titleid"></h2>
+	</div>
+	<hr>
+	<center>
+		<table border='2' id="displaytable">
+			<tr>
+				<th width="500" class="dcolor">Subject</th>
+				<th width="100" class="dcolor">Code</th>
+				<th width="50" class="dcolor">Marks</th>
+			</tr>
+			<tr id="addrows1">
+				<td><input id="isubid1" type="text" class="combocolor" style="width:500px"></td>
+				<td><input id="icodeid1" class="combocolor" type="text"></td>
+				<td><input id="imarkaid1" class="combocolor" type="text"></td>
+			</tr>
+			<tr id="addrows2">
+				<td><input id="isubid2" class="combocolor" type="text" style="width:500px"></td>
+				<td><input id="icodeid2" class="combocolor" type="text"></td>
+				<td><input id="imarkaid2" class="combocolor" type="text"></td>
+			</tr>
+			<tr id="addrows3">
+				<td><input id="isubid3" class="combocolor" type="text" style="width:500px"></td>
+				<td><input id="icodeid3" class="combocolor" type="text"></td>
+				<td><input id="imarkaid3" class="combocolor" type="text"></td>
+			</tr>
+			<tr id="addrows4">
+				<td><input id="isubid4" class="combocolor" type="text" style="width:500px"></td>
+				<td><input id="icodeid4" class="combocolor" type="text"></td>
+				<td><input id="imarkaid4" class="combocolor" type="text"></td>
+			</tr>
+			<tr id="addrows5">
+				<td><input id="isubid5" class="combocolor" type="text" style="width:500px"></td>
+				<td><input id="icodeid5" class="combocolor" type="text"></td>
+				<td><input id="imarkaid5" class="combocolor" type="text"></td>
+			</tr>
+			<tr id="addrows6">
+				<td><input id="isubid6" class="combocolor" type="text" style="width:500px"></td>
+				<td><input id="icodeid6" class="combocolor" type="text"></td>
+				<td><input id="imarkaid6" class="combocolor" type="text"></td>
+			</tr>
+			<tr id="addrows7">
+				<td><input id="isubid7" class="combocolor" type="text" style="width:500px"></td>
+				<td><input id="icodeid7" class="combocolor" type="text"></td>
+				<td><input id="imarkaid7" class="combocolor" type="text"></td>
+			</tr>
+			<tr id="addrows8">
+				<td><input id="isubid8" class="combocolor" type="text" style="width:500px"></td>
+				<td><input id="icodeid8" class="combocolor" type="text"></td>
+				<td><input id="imarkaid8" class="combocolor" type="text"></td>
+			</tr>
+			<tr id="addrows9">
+				<td><input id="isubid9" class="combocolor" type="text" style="width:500px"></td>
+				<td><input id="icodeid9" class="combocolor" type="text"></td>
+				<td><input id="imarkaid9" class="combocolor" type="text"></td>
+			</tr>
+			<tr id="addrows10">
+				<td><input id="isubid10" class="combocolor" type="text" style="width:500px"></td>
+				<td><input id="icodeid10" class="combocolor" type="text"></td>
+				<td><input id="imarkaid10"class="combocolor" type="text"></td>
+			</tr>
+			<tr>
+				<td colspan='3' class="combocolor">
+					<button style="color:blue" onclick="submitbutton()">Submit Subjects</button>
+				</td>
+			</tr>
+		</table>
+	</center>
+	
+	<hr>
+	
+	<div>
+		<h3 id="subdetails" class="combocolor" style="visibility:collapse">The Subject Details</h3>
+	</div>
+	<center>
+		<table  border='2' id="displaytable2">
+			<tr>
+				<th width="500" class="dcolor">Subject</th>
+				<th width="75" class="dcolor">Code</th>
+				<th width="75" class="dcolor">Marks</th>
+				<th width="75" class="dcolor">Grade</th>
+				<th width="75" class="dcolor">Credits</th>
+				<th width="100" class="dcolor">GPV for Grades</th>
+				<th width="100" class="dcolor">GPV for Subjects</th>
+			</tr>
+			<tr id="insertdetails1">
+				<td id="subject1"></td>
+				<td id="code1"></td>
+				<td id="marks1"></td>
+				<td id="grade1"></td>
+				<td id="credits1"></td>
+				<td id="gpvg1"></td>
+				<td id="gpvs1"></td>
+			</tr>
+			<tr id="insertdetails2">
+				<td id="subject2"></td>
+				<td id="code2"></td>
+				<td id="marks2"></td>
+				<td id="grade2"></td>
+				<td id="credits2"></td>
+				<td id="gpvg2"></td>
+				<td id="gpvs2"></td>
+			</tr>
+			<tr id="insertdetails3">
+				<td id="subject3"></td>
+				<td id="code3"></td>
+				<td id="marks3"></td>
+				<td id="grade3"></td>
+				<td id="credits3"></td>
+				<td id="gpvg3"></td>
+				<td id="gpvs3"></td>
+			</tr>
+			<tr id="insertdetails4">
+				<td id="subject4"></td>
+				<td id="code4"></td>
+				<td id="marks4"></td>
+				<td id="grade4"></td>
+				<td id="credits4"></td>
+				<td id="gpvg4"></td>
+				<td id="gpvs4"></td>
+			</tr>
+			<tr id="insertdetails5">
+				<td id="subject5"></td>
+				<td id="code5"></td>
+				<td id="marks5"></td>
+				<td id="grade5"></td>
+				<td id="credits5"></td>
+				<td id="gpvg5"></td>
+				<td id="gpvs5"></td>
+			</tr>
+			<tr id="insertdetails6">
+				<td id="subject6"></td>
+				<td id="code6"></td>
+				<td id="marks6"></td>
+				<td id="grade6"></td>
+				<td id="credits6"></td>
+				<td id="gpvg6"></td>
+				<td id="gpvs6"></td>
+			</tr>
+			<tr id="insertdetails7">
+				<td id="subject7"></td>
+				<td id="code7"></td>
+				<td id="marks7"></td>
+				<td id="grade7"></td>
+				<td id="credits7"></td>
+				<td id="gpvg7"></td>
+				<td id="gpvs7"></td>
+			</tr>
+			<tr id="insertdetails8">
+				<td id="subject8"></td>
+				<td id="code8"></td>
+				<td id="marks8"></td>
+				<td id="grade8"></td>
+				<td id="credits8"></td>
+				<td id="gpvg8"></td>
+				<td id="gpvs8"></td>
+			</tr>
+			<tr id="insertdetails9">
+				<td id="subject9"></td>
+				<td id="code9"></td>
+				<td id="marks9"></td>
+				<td id="grade9"></td>
+				<td id="credits9"></td>
+				<td id="gpvg9"></td>
+				<td id="gpvs9"></td>
+			</tr>
+			<tr id="insertdetails10">
+				<td id="subject10"></td>
+				<td id="code10"></td>
+				<td id="marks10"></td>
+				<td id="grade10"></td>
+				<td id="credits10"></td>
+				<td id="gpvg10"></td>
+				<td id="gpvs10"></td>
+			</tr>
+			<tr>
+				<td colspan='7' id="gpvid"></td>
+			</tr>
+			<tr>
+				<td colspan='7' id="creditid"></td>
+			</tr>
+			<tr>
+				<td colspan='7' id="gpaid">	</td>
+			</tr>
+		</table>
+	</center>
+	<hr>	
+	<script>
+		function addbutton(){
+			var lev = document.getElementById("level").value;
+			var textlev;
+			switch(lev){
+				case '1':textlev="First Year";
+				break;
+				case '2':textlev="Second Year";
+				break;
+				case '3':textlev="Third Year";
+				break;
+				case '4':textlev="Forth Year";
+				break;
+			}
+			
+			var sem = document.getElementById("semester").value;
+			var textsem;
+			switch(sem){
+				case '1':textsem="First Semester";
+				break;
+				case '2':textsem="Second Semester";
+				break;
+			}
+			
+			var acyear = document.getElementById("accyear").value;
+			
+			document.getElementById("titleid").innerHTML=textlev+" - "+textsem+" - "+acyear;
+			
+			document.getElementById("displaytable").style.visibility="visible";
+			
+			var noofsub=document.getElementById("noofsub").value;
+				
+			
+			for(var i=1; i<=noofsub; i++){
+				document.getElementById("addrows"+i).style.visibility="visible";
+			}
+		}
+		function submitbutton(){
+			document.getElementById("subdetails").style.visibility="visible";
+			document.getElementById("displaytable2").style.visibility="visible";
+			var noofsub=document.getElementById("noofsub").value;
+			
+			for(var i=1; i<=noofsub; i++){
+				document.getElementById("insertdetails"+i).style.visibility="visible";
+			}
+			for(var i=1; i<=noofsub; i++){
+				document.getElementById("subject"+i).innerHTML=document.getElementById("isubid"+i).value;
+			}
+			for(var i=1; i<=noofsub; i++){
+				document.getElementById("code"+i).innerHTML=document.getElementById("icodeid"+i).value;
+			}
+			for(var i=1; i<=noofsub; i++){
+				document.getElementById("marks"+i).innerHTML=document.getElementById("imarkaid"+i).value;
+			}
+			for(var i=1; i<=noofsub; i++){
+				var marksn = document.getElementById("imarkaid"+i).value;
+				var textgrade;
+				var textgpv;
+				
+				if(marksn>100){
+					textgrade="Error";
+					textgpv="Error";
+				}
+				else if(marksn>=80){
+					textgrade="A+";
+					textgpv='4.0';
+				}	
+				else if(marksn>=75){
+					textgrade="A";
+					textgpv='4.0';
+				}
+				else if(marksn>=70){
+					textgrade="A-";
+					textgpv='3.7';
+				}
+				else if(marksn>=65){
+					textgrade="B+";
+					textgpv='3.3';
+				}
+				else if(marksn>=60){
+					textgrade="B";
+					textgpv='3.0';
+				}
+				else if(marksn>=55){
+					textgrade="B-";
+					textgpv='2.7';
+				}
+				else if(marksn>=50){
+					textgrade="C+";
+					textgpv='2.3';
+				}
+				else if(marksn>=45){
+					textgrade="C";
+					textgpv='2.0';
+				}
+				else if(marksn>=40){
+					textgrade="C-";
+					textgpv='1.7';
+				}
+				else if(marksn>=35){
+					textgrade="D+";
+					textgpv='1.3';
+				}
+				else if(marksn>=30){
+					textgrade="D";
+					textgpv='1.0';
+				}
+				else if(marksn>=0){
+					textgrade="E";
+					textgpv='0.0';
+				}
+				document.getElementById("grade"+i).innerHTML=textgrade;
+				document.getElementById("gpvg"+i).innerHTML=textgpv;
+			}
+			for(var i=1; i<=noofsub; i++){
+				var creditget=document.getElementById("icodeid"+i).value;
+				var credit=creditget.substr(-1,1);
+				document.getElementById("credits"+i).innerHTML=credit;
+			}
+			
+			for(var i=1; i<=noofsub; i++){
+				var credit=document.getElementById("credits"+i).innerHTML;
+				var gpvgrade=document.getElementById("gpvg"+i).innerHTML;
+				var gpvsubject=parseFloat(credit)*parseFloat(gpvgrade);
+				document.getElementById("gpvs"+i).innerHTML=gpvsubject;
+			}
+			
+			var gpasum=0;
+			var creditsum=0;
+
+			for(var i=1;i<=noofsub;i++){
+				var gpasum=gpasum+parseFloat(document.getElementById("gpvs"+i).innerHTML);
+				var creditsum=creditsum+parseInt(document.getElementById("credits"+i).innerHTML);
+			}
+			document.getElementById("gpvid").innerHTML="Total GPV:"+gpasum.toFixed(2);
+			document.getElementById("creditid").innerHTML="Total Credit:"+creditsum;
+
+			var finalgpa=gpasum/creditsum;
+			document.getElementById("gpaid").innerHTML="final GPA:"+finalgpa.toFixed(2);	
+		}
+	</script>
+</body>
+</html>

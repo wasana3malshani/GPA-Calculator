@@ -1,0 +1,45 @@
+body{
+	background-color:#e1c8f7;
+}
+.heading{
+	color:white;
+	text-align:center;
+	background-color:grey;
+	padding:1;
+}
+.printheading{
+	color:green;
+	text-align:center;
+}
+#displaytable{
+	visibility:collapse;
+	text-align:center;
+}
+#displaytable #addrows1,#addrows2,#addrows3,#addrows4,#addrows5,#addrows6,#addrows7,#addrows8,#addrows9,#addrows10{
+	visibility:collapse;
+}
+#displaytable2{
+	visibility:collapse;
+	text-align:center;
+	color:blue;
+}
+#displaytable2 #insertdetails1,#insertdetails2,#insertdetails3,#insertdetails4,#insertdetails5,#insertdetails6,#insertdetails7,#insertdetails8,#insertdetails9,#insertdetails10{
+	visibility:collapse;
+}
+#button{
+	color:blue;
+	text-align:center;
+}
+#input{
+	color:blue;
+	text-align:center;
+}
+
+.dcolor{
+	color:green;
+	text-align:center;
+}
+.combocolor{
+	color:blue;
+	text-align:center;
+}
